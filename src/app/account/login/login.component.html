@@ -1,0 +1,96 @@
+                                           <!-- template Driven Form -->
+
+<!-- <form #templateDrivenForms="ngForm" (ngSubmit)="handleLoginFormSubmit(templateDrivenForms)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input required type="email" ngModel name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+      @if(templateDrivenForms.controls["email"]?.invalid && templateDrivenForms.controls["email"]?.dirty){
+        <span class="text-danger">Email is required</span>
+      }
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input minlength="3" required type="password" ngModel name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+      @if(templateDrivenForms.controls["password"]?.invalid && templateDrivenForms.controls["password"]?.dirty){
+        <span class="text-danger">Password is required</span>
+      }
+
+      @if(templateDrivenForms.controls["password"]?.errors?.["minlength"]){
+        <span class="text-danger">minimum length is 3 chars</span>
+      }
+      
+    </div>
+    <div class="form-check">
+      <input type="checkbox" ngModel name="rememderme" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Rememder Me</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form> -->
+
+
+                                            <!-- OR -->
+
+        <!-- refrence -->
+<!-- <form #templateDrivenForms="ngForm" (ngSubmit)="handleLoginFormSubmit(templateDrivenForms)">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input required type="email" [(ngModel)]="loginInfo.email" #emailVar="ngModel" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+    @if(emailVar.errors?.["required"]){
+      <span class="text-danger">Email is required</span>
+    }
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input minlength="3" required type="password" [(ngModel)]="loginInfo.password" #passwordVar="ngModel" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+    @if(passwordVar.errors?.["required"]){
+      <span class="text-danger">Password is required</span>
+    }
+
+    @if(passwordVar.errors?.["minlength"]){
+      <span class="text-danger">minimum length is 3 chars</span>
+    }
+    
+  </div>
+  <div class="form-check">
+    <input type="checkbox" [(ngModel)]="loginInfo.rememberme" #remembermeVar="ngModel" name="rememderme" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Rememder Me</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form> -->
+
+
+
+
+<form [formGroup]="loginForm" (ngSubmit)="handleLoginFormSubmit()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+    @if(loginForm.get("email")?.errors?.["required"]){
+      <span class="text-danger">Email is required</span>
+    }
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+    @if(loginForm.get("password")?.errors?.["required"]){
+      <span class="text-danger">Password is required</span>
+    }
+
+    @if(loginForm.get("password")?.errors?.["minlength"]){
+      <span class="text-danger">minimum length is 3 chars</span>
+    }
+    
+  </div>
+  <div class="form-check">
+    <input type="checkbox" formControlName="rememberme" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Rememder Me</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+  <button (click)="fillData()" class="btn btn-primary">Fill Data</button>
+</form>

@@ -1,0 +1,46 @@
+[
+    {
+        "productId": 1,
+        "productName": "IPhone 15",
+        "productCode": "ios-0015-S",
+        "releaseDate": "March 24, 2024",
+        "description": "Super iphone very expensive and useless",
+        "price": 1999.99,
+        "starRating": 4.3,
+        "imageUrl": "assets/images/iphone.webp",
+        "categoryId": 2
+      },
+      {
+        "productId": 2,
+        "productName": "IPhone 10",
+        "productCode": "ios-0010-S",
+        "releaseDate": "March 24, 2024",
+        "description": "Super iphone very expensive and useless",
+        "price": 1000.99,
+        "starRating": 1.5,
+        "imageUrl": "assets/images/iphone.webp",
+        "categoryId": 1
+      },
+      {
+        "productId": 3,
+        "productName": "S24 Ultra",
+        "productCode": "Android-0024-S",
+        "releaseDate": "March 24, 2024",
+        "description": "Super android very expensive and very smart",
+        "price": 1500.1,
+        "starRating": 5,
+        "imageUrl": "assets/images/samsung.jpeg",
+        "categoryId": 2
+      },
+      {
+        "productId": 4,
+        "productName": "IPhone 16",
+        "productCode": "ios-0016-S",
+        "releaseDate": "March 24, 2024",
+        "description": "Super iphone very expensive and useless",
+        "price": 1000.99,
+        "starRating": 1.5,
+        "imageUrl": "assets/images/iphone.webp",
+        "categoryId": 1
+      }
+]
